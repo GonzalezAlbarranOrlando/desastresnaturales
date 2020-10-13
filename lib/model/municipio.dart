@@ -1,33 +1,37 @@
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/material.dart';
 
-class Product{
-  String _id;
+class Municipio{
+  String _id_igecem;
   String _nombre;
-  String _codigo;
-  String _descripcion;
-  String _precio;
+  String _significado;
+  String _cabeceramun;
+  String _superficie;
+  String _altitud;
 
-  Product(this._id, this._nombre, this._codigo, this._descripcion, this._precio);
+  Municipio(this._id_igecem, this._nombre, this._significado, this._cabeceramun, this._superficie, this._altitud);
 
-  Product.map(dynamic obj){
+  Municipio.map(dynamic obj){
     this._nombre = obj['nombre'];
-    this._codigo = obj['codigo'];
-    this._descripcion = obj['descripcion'];
-    this._precio = obj['precio'];
+    this._significado = obj['significado'];
+    this._cabeceramun = obj['cabeceramun'];
+    this._superficie = obj['superficie'];
+    this._altitud = obj['altitud'];
   }
 
-  String get id => _id;
+  String get id_igecem => _id_igecem;
   String get nombre =>_nombre;
-  String get codigo => _codigo;
-  String get descripcion => _descripcion;
-  String get precio => _precio;
+  String get significado => _significado;
+  String get cabeceranum => _cabeceramun;
+  String get superficie => _superficie;
+  String get altitud => _altitud;
 
-  Product.fromSnapShop(DataSnapshot snapshot){
-    _id = snapshot.key;
+  Municipio.fromSnapShop(DataSnapshot snapshot){
+    _id_igecem = snapshot.key;
     _nombre = snapshot.value['nombre'];
-    _codigo = snapshot.value['codigo'];
-    _descripcion = snapshot.value['descripcion'];
-    _precio = snapshot.value['precio'];
+    _significado = snapshot.value['significado'];
+    _cabeceramun = snapshot.value['cabeceramun'];
+    _superficie = snapshot.value['superficie'];
+    _altitud = snapshot.value['altitud'];
   }
-
 }
