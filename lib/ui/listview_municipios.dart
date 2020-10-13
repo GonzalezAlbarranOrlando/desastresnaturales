@@ -13,8 +13,7 @@ class ListViewMunicipio extends StatefulWidget {
   _ListViewMunicipioState createState() => _ListViewMunicipioState();
 }
 
-final municipioReference =
-    FirebaseDatabase.instance.reference().child('municipio');
+final municipioReference = FirebaseDatabase.instance.reference().child('municipio');
 
 class _ListViewMunicipioState extends State<ListViewMunicipio> {
   List<Municipio> items;
@@ -76,7 +75,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                                 ),
                               ),
                               subtitle: Text(
-                                '${items[position].cabeceranum}',
+                                '${items[position].cabeceramun}',
                                 style: TextStyle(
                                   color: Colors.blueGrey,
                                   fontSize: 21.0,

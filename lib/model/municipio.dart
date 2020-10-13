@@ -22,7 +22,7 @@ class Municipio{
   String get id_igecem => _id_igecem;
   String get nombre =>_nombre;
   String get significado => _significado;
-  String get cabeceranum => _cabeceramun;
+  String get cabeceramun => _cabeceramun;
   String get superficie => _superficie;
   String get altitud => _altitud;
 

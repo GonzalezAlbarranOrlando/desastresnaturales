@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:desastresnaturales/model/'
+import 'package:desastresnaturales/model/municipio.dart';
 
-class ProductInformation extends StatefulWidget {
+class MunicipioInformation extends StatefulWidget {
 
-  final Product product;
-  ProductInformation(this.product);
+  final Municipio municipio;
+  MunicipioInformation(this.municipio);
 
   @override
-  _ProductInformationState createState() => _ProductInformationState();
+  _MunicipioInformationState createState() => _MunicipioInformationState();
 }
 
-final productReference = FirebaseDatabase.instance.reference().child('product');
+final municipioReference = FirebaseDatabase.instance.reference().child('municipio');
 
-class _ProductInformationState extends State<ProductInformation> {
+class _MunicipioInformationState extends State<MunicipioInformation> {
 
-  List<Product> items;
+  List<Municipio> items;
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _ProductInformationState extends State<ProductInformation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Información de productos'),
+        title: Text('Información de municipios'),
         backgroundColor: Colors.green,
       ),
       body: Container(
@@ -37,16 +37,19 @@ class _ProductInformationState extends State<ProductInformation> {
           child: Center(
             child: Column(
               children: <Widget>[
-                new Text("Nombre : ${widget.product.nombre}", style: TextStyle(fontSize: 18.0),),
+                new Text("Nombre : ${widget.municipio.nombre}", style: TextStyle(fontSize: 18.0),),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
-                new Text("Código : ${widget.product.codigo}", style: TextStyle(fontSize: 18.0),),
+                new Text("Significado : ${widget.municipio.significado}", style: TextStyle(fontSize: 18.0),),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
-                new Text("Descripción : ${widget.product.descripcion}", style: TextStyle(fontSize: 18.0),),
+                new Text("Cabecera Municipal : ${widget.municipio.cabeceramun}", style: TextStyle(fontSize: 18.0),),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
-                new Text("Precio : ${widget.product.precio}", style: TextStyle(fontSize: 18.0),),
+                new Text("Superficie : ${widget.municipio.superficie}", style: TextStyle(fontSize: 18.0),),
+                Padding(padding: EdgeInsets.only(top: 8.0),),
+                Divider(),
+                new Text("Altitud : ${widget.municipio.altitud}", style: TextStyle(fontSize: 18.0),),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
               ],
