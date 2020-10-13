@@ -99,7 +99,7 @@ class _ListViewMunicipioConsultorState
                                   )
                                 ],
                               ),
-                              onTap: () => _navigateToMunicipioInformation(
+                              onTap: () => _navigateToMunicipio(
                                   context, items[position])),
                         ),
                       ],
@@ -127,11 +127,10 @@ class _ListViewMunicipioConsultorState
     });
   }
 
-  void _navigateToMunicipioInformation(
-      BuildContext context, Municipio municipio) async {
+  void _navigateToMunicipio(BuildContext context, Municipio municipio) async {
     await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => MunicipioScreen(municipio)),
+      MaterialPageRoute(builder: (context) => MunicipioInformation(municipio)),
     );
   }
 }
