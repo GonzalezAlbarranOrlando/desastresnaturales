@@ -58,15 +58,15 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
         backgroundColor: Colors.deepOrangeAccent,
       ),
       body: Container(
-        height: 570.0,
-        //padding: const EdgeInsets.all(20.0),
+        //height: 570.0,
+        padding: const EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
             TextField(
               controller: _id_igecemController,
               style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
               decoration:
-                  InputDecoration(icon: Icon(Icons.map), labelText: 'IGECEM'),
+                  InputDecoration(icon: Icon(Icons.format_list_numbered), labelText: 'IGECEM'),
             ),
             Padding(
               padding: EdgeInsets.only(top: 8.0),
@@ -96,7 +96,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
               controller: _cabeceramunController,
               style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
               decoration: InputDecoration(
-                  icon: Icon(Icons.list), labelText: 'Cabecera Municipal'),
+                  icon: Icon(Icons.text_format), labelText: 'Cabecera Municipal'),
             ),
             Padding(
               padding: EdgeInsets.only(top: 8.0),
