@@ -47,7 +47,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
         appBar: AppBar(
           title: Text('Municipios listado'),
           centerTitle: true,
-          backgroundColor: Colors.deepPurpleAccent,
+          backgroundColor: Colors.deepOrangeAccent,
           leading: IconButton(
             icon: Icon(Icons.cancel),
             onPressed: () => context.read<AuthenticationService>().signOut(),
@@ -70,7 +70,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                               title: Text(
                                 '${items[position].nombre}',
                                 style: TextStyle(
-                                  color: Colors.blueAccent,
+                                  color: Colors.black,
                                   fontSize: 21.0,
                                 ),
                               ),
@@ -89,7 +89,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                                     child: Text(
                                       '${position + 1}',
                                       style: TextStyle(
-                                        color: Colors.blueGrey,
+                                        color: Colors.black,
                                         fontSize: 21.0,
                                       ),
                                     ),

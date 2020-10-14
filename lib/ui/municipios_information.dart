@@ -27,8 +27,8 @@ class _MunicipioInformationState extends State<MunicipioInformation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Información de municipios'),
-        backgroundColor: Colors.green,
+        title: Text('Información del municipio'),
+        backgroundColor: Colors.deepOrangeAccent,
       ),
       body: Container(
         height: 400.0,

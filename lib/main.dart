@@ -71,7 +71,7 @@ class Login_page extends StatelessWidget {
         appBar: AppBar(
           title: Text('Ingresar'),
           centerTitle: true,
-          backgroundColor: Colors.deepPurpleAccent,
+          backgroundColor: Colors.deepOrangeAccent,
         ),
         body: Form(
             key: _formkey,
