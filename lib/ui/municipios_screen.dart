@@ -23,6 +23,8 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
   TextEditingController _cabeceramunController;
   TextEditingController _superficieController;
   TextEditingController _altitudController;
+  TextEditingController _climaController;
+  TextEditingController _localizacionController;
 
   @override
   void initState() {
@@ -40,6 +42,10 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
         new TextEditingController(text: widget.municipio.superficie);
     _altitudController =
         new TextEditingController(text: widget.municipio.altitud);
+    _climaController =
+    new TextEditingController(text: widget.municipio.clima);
+    _localizacionController =
+    new TextEditingController(text: widget.municipio.localizacion);
   }
 
   @override
@@ -111,6 +117,26 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
               style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
               decoration: InputDecoration(
                   icon: Icon(Icons.format_size), labelText: 'Altitud'),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 8.0),
+            ),
+            Divider(),
+            TextField(
+              controller: _climaController,
+              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
+              decoration: InputDecoration(
+                  icon: Icon(Icons.cloud_circle), labelText: 'Clima'),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 8.0),
+            ),
+            Divider(),
+            TextField(
+              controller: _localizacionController,
+              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
+              decoration: InputDecoration(
+                  icon: Icon(Icons.local_activity), labelText: 'Localización'),
             ),
             Padding(
               padding: EdgeInsets.only(top: 8.0),

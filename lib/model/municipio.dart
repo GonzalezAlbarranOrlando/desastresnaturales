@@ -39,5 +39,7 @@ class Municipio{
     _cabeceramun = snapshot.value['cabeceramun'];
     _superficie = snapshot.value['superficie'];
     _altitud = snapshot.value['altitud'];
+    _clima = snapshot.value['clima'];
+    _localizacion = snapshot.value['localizacion'];
   }
 }

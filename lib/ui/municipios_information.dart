@@ -56,6 +56,12 @@ class _MunicipioInformationState extends State<MunicipioInformation> {
                 new Text("Altitud : ${widget.municipio.altitud}", style: TextStyle(fontSize: 18.0),),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
+                new Text("Clima : ${widget.municipio.clima}", style: TextStyle(fontSize: 18.0),),
+                Padding(padding: EdgeInsets.only(top: 8.0),),
+                Divider(),
+                new Text("Localización : ${widget.municipio.localizacion}", style: TextStyle(fontSize: 18.0),),
+                Padding(padding: EdgeInsets.only(top: 8.0),),
+                Divider(),
                 RaisedButton(onPressed: () => Fluttertoast.showToast(msg: "Mapa"), child: Text("Mapa"),)
               ],
             ),
