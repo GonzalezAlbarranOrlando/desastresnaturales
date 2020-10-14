@@ -132,6 +132,8 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
               padding: EdgeInsets.only(top: 8.0),
             ),
             Divider(),
+            CheckboxListTile(title: Text("Selecciona el clima")),
+
             TextField(
               controller: _localizacionController,
               style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
