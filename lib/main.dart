@@ -56,6 +56,7 @@ class AuthenticationWrapper extends StatelessWidget {
         return Login_page();
       }
     }
+    return Login_page();
   }
 }
 
@@ -94,7 +95,7 @@ class Login_page extends StatelessWidget {
                         email: emailController.text.trim(),
                         password: passwordController.text.trim());
                   },
-                  child: Text('Ingresar'),
+                  child: Text('Ingresar'), color: Colors.deepOrangeAccent, textColor: Colors.white,
                 )
               ],
             )),

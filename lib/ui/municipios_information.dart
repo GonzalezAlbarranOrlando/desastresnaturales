@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:desastresnaturales/model/municipio.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class MunicipioInformation extends StatefulWidget {
 
@@ -52,6 +53,7 @@ class _MunicipioInformationState extends State<MunicipioInformation> {
                 new Text("Altitud : ${widget.municipio.altitud}", style: TextStyle(fontSize: 18.0),),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
+                RaisedButton(onPressed: () => Fluttertoast.showToast(msg: "Mapa"), child: Text("Mapa"),)
               ],
             ),
           ),
