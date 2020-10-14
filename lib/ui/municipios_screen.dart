@@ -53,7 +53,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
       ),
       body: Container(
         height: 570.0,
-        padding: const EdgeInsets.all(20.0),
+        //padding: const EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
             TextField(
