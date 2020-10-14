@@ -5,6 +5,7 @@ import 'package:desastresnaturales/model/municipio.dart';
 
 class MunicipioScreen extends StatefulWidget {
   final Municipio municipio;
+
   MunicipioScreen(this.municipio);
 
   @override
@@ -16,6 +17,7 @@ final municipioReference =
 
 class _MunicipioScreenState extends State<MunicipioScreen> {
   List<Municipio> items;
+  TextEditingController _id_igecemController;
   TextEditingController _nombreController;
   TextEditingController _significadoController;
   TextEditingController _cabeceramunController;
@@ -26,6 +28,8 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    _id_igecemController =
+        new TextEditingController(text: widget.municipio.id_igecem);
     _nombreController =
         new TextEditingController(text: widget.municipio.nombre);
     _significadoController =
@@ -56,7 +60,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
               controller: _nombreController,
               style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
               decoration:
-                  InputDecoration(icon: Icon(Icons.map), labelText: 'Nombre'),
+                  InputDecoration(icon: Icon(Icons.map), labelText: 'Nombres'),
             ),
             Padding(
               padding: EdgeInsets.only(top: 8.0),
