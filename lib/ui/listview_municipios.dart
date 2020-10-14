@@ -174,7 +174,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
     await Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => MunicipioScreen(Municipio(null, '', '', '', '',''))),
+          builder: (context) => MunicipioScreen(Municipio('', '', '', '', '',''))),
     );
   }
 }

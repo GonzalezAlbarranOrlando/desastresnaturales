@@ -57,10 +57,20 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
         child: ListView(
           children: <Widget>[
             TextField(
+              controller: _id_igecemController,
+              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
+              decoration:
+                  InputDecoration(icon: Icon(Icons.map), labelText: 'IGECEM'),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 8.0),
+            ),
+            Divider(),
+            TextField(
               controller: _nombreController,
               style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
               decoration:
-                  InputDecoration(icon: Icon(Icons.map), labelText: 'Nombres'),
+              InputDecoration(icon: Icon(Icons.map), labelText: 'Nombre'),
             ),
             Padding(
               padding: EdgeInsets.only(top: 8.0),
@@ -109,7 +119,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
             FlatButton(
                 onPressed: () {
                   if (widget.municipio.id_igecem != null) {
-                    municipioReference.child(widget.municipio.id_igecem).set({
+                    municipioReference.child(_id_igecemController.text).set({
                       'nombre': _nombreController.text,
                       'significado': _significadoController.text,
                       'cabeceramun': _cabeceramunController.text,
