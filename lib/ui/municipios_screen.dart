@@ -151,6 +151,8 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                       'cabeceramun': _cabeceramunController.text,
                       'superficie': _superficieController.text,
                       'altitud': _altitudController.text,
+                      'clima': _climaController.text,
+                      'localizacion': _localizacionController.text,
                     }).then((_) {
                       Navigator.pop(context);
                     });
@@ -161,12 +163,14 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                       'cabeceramun': _cabeceramunController.text,
                       'superficie': _superficieController.text,
                       'altitud': _altitudController.text,
+                      'clima': _climaController.text,
+                      'localizacion': _localizacionController.text,
                     }).then((_) {
                       Navigator.pop(context);
                     });
                   }
                 },
-                child: (widget.municipio.id_igecem != null)? Text('Actualizar') : Text('Guardar')),
+                child: (widget.municipio.id_igecem != null)? Text('Guardar') : Text('Guardar')),
           ],
         ),
       ),
