@@ -166,9 +166,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                     });
                   }
                 },
-                child: (widget.municipio.id_igecem != null)
-                    ? Text('Actualizar')
-                    : Text('Agregar')),
+                child: (widget.municipio.id_igecem != null)? Text('Guardar') : Text('Actualizar')),
           ],
         ),
       ),
