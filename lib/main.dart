@@ -79,11 +79,11 @@ class Login_page extends StatelessWidget {
               children: <Widget>[
                 TextFormField(
                   controller: emailController,
-                  decoration: InputDecoration(labelText: "Correo"),
+                  decoration: InputDecoration(labelText: "Ingresa el correo electrónico"),
                 ),
                 TextFormField(
                   controller: passwordController,
-                  decoration: InputDecoration(labelText: "Contraseña"),
+                  decoration: InputDecoration(labelText: "Ingresa la contraseña"),
                   obscureText: true,
                 ),
                 RaisedButton(
