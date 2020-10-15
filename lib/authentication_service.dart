@@ -27,4 +27,8 @@ class AuthenticationService{
       return e.message;
     }
   }
+
+  String get_email() {
+    return _firebaseAuth.currentUser.email;
+  }
 }

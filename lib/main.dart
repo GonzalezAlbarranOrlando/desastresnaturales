@@ -1,4 +1,5 @@
 import 'package:desastresnaturales/ui/listview_municipiosConsultor.dart';
+import 'package:desastresnaturales/ui/menu_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -48,10 +49,10 @@ class AuthenticationWrapper extends StatelessWidget {
     if (firebaseuser != null) {
       if (str_email == "administrador@gmail.com") {
         Fluttertoast.showToast(msg: "Bienvenido Administrador");
-        return ListViewMunicipio();
+        return Menu_page();
       }else if (str_email == "consultor@gmail.com"){
         Fluttertoast.showToast(msg: "Bienvenido Consultor");
-        return ListViewMunicipioConsultor();
+        return Menu_page();
       }else{
         Fluttertoast.showToast(msg: "Ingresa datos correctos");
       }
