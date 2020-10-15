@@ -21,12 +21,12 @@ final municipioReference = FirebaseDatabase.instance.reference().child('principa
 class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
   List<Municipio> items;
   TextEditingController _id_igecemController;
-  TextEditingController _nombreController;
-  TextEditingController _significadoController;
-  TextEditingController _cabeceramunController;
-  TextEditingController _superficieController;
-  TextEditingController _altitudController;
-  TextEditingController _climaController;
+  TextEditingController _elevacionController;
+  TextEditingController _canal_rioController;
+  TextEditingController _cuerpoController;
+  TextEditingController _maspobladoController;
+  TextEditingController _menospobladoController;
+  TextEditingController _industrializadoController;
   TextEditingController _latController;
   TextEditingController _lonController;
   final _formKey = new GlobalKey<FormState>();
@@ -37,17 +37,17 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
     super.initState();
     _id_igecemController =
     new TextEditingController(text: widget.municipio.id_igecem);
-    _nombreController =
+    _elevacionController =
     new TextEditingController(text: widget.municipio.nombre);
-    _significadoController =
+    _canal_rioController =
     new TextEditingController(text: widget.municipio.significado);
-    _cabeceramunController =
+    _cuerpoController =
     new TextEditingController(text: widget.municipio.cabeceramun);
-    _superficieController =
+    _maspobladoController =
     new TextEditingController(text: widget.municipio.superficie);
-    _altitudController =
+    _menospobladoController =
     new TextEditingController(text: widget.municipio.altitud);
-    _climaController = new TextEditingController(text: widget.municipio.clima);
+    _industrializadoController = new TextEditingController(text: widget.municipio.clima);
     _latController =
     new TextEditingController(text: widget.municipio.lat);
     _lonController =
@@ -75,7 +75,7 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   TextField(
-                    controller: _nombreController,
+                    controller: _elevacionController,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(
@@ -86,7 +86,7 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                   ),
                   Divider(),
                   TextField(
-                    controller: _significadoController,
+                    controller: _canal_rioController,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(
@@ -98,7 +98,7 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                   ),
                   Divider(),
                   TextField(
-                    controller: _cabeceramunController,
+                    controller: _cuerpoController,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(
@@ -110,7 +110,7 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                   ),
                   Divider(),
                   TextField(
-                    controller: _superficieController,
+                    controller: _maspobladoController,
                     keyboardType: TextInputType.number,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
@@ -122,7 +122,7 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                   ),
                   Divider(),
                   TextField(
-                    controller: _altitudController,
+                    controller: _menospobladoController,
                     keyboardType: TextInputType.number,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
@@ -134,40 +134,11 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                   ),
                   Divider(),
                   TextField(
-                    controller: _climaController,
+                    controller: _industrializadoController,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(
                         icon: Icon(Icons.cloud_circle), labelText: 'Industrializado'),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 8.0),
-                  ),
-                  Divider(),
-
-                  //CheckboxListTile(title: Text("Selecciona el clima"),
-                  //secondary: Icon(Icons.cloud),
-                  //),
-
-                  TextField(
-                    controller: _latController,
-                    style: TextStyle(
-                        fontSize: 17.0, color: Colors.deepOrangeAccent),
-                    decoration: InputDecoration(
-                        icon: Icon(Icons.local_activity),
-                        labelText: 'Latitud'),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 8.0),
-                  ),
-                  Divider(),
-                  TextField(
-                    controller: _lonController,
-                    style: TextStyle(
-                        fontSize: 17.0, color: Colors.deepOrangeAccent),
-                    decoration: InputDecoration(
-                        icon: Icon(Icons.local_activity),
-                        labelText: 'Longitud'),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 8.0),
@@ -179,12 +150,12 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                           municipioReference
                               .child(_id_igecemController.text)
                               .set({
-                            'nombre': _nombreController.text,
-                            'significado': _significadoController.text,
-                            'cabeceramun': _cabeceramunController.text,
-                            'superficie': _superficieController.text,
-                            'altitud': _altitudController.text,
-                            'clima': _climaController.text,
+                            'nombre': _elevacionController.text,
+                            'significado': _canal_rioController.text,
+                            'cabeceramun': _cuerpoController.text,
+                            'superficie': _maspobladoController.text,
+                            'altitud': _menospobladoController.text,
+                            'clima': _industrializadoController.text,
                             'lat': _latController.text,
                             'lon': _lonController.text,
                           }).then((_) {
@@ -192,12 +163,12 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                           });
                         } else {
                           municipioReference.push().set({
-                            'nombre': _nombreController.text,
-                            'significado': _significadoController.text,
-                            'cabeceramun': _cabeceramunController.text,
-                            'superficie': _superficieController.text,
-                            'altitud': _altitudController.text,
-                            'clima': _climaController.text,
+                            'nombre': _elevacionController.text,
+                            'significado': _canal_rioController.text,
+                            'cabeceramun': _cuerpoController.text,
+                            'superficie': _maspobladoController.text,
+                            'altitud': _menospobladoController.text,
+                            'clima': _industrializadoController.text,
                             'lat': _latController.text,
                             'lon': _lonController.text,
                           }).then((_) {
