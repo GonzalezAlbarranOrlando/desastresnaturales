@@ -25,6 +25,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
   TextEditingController _altitudController;
   TextEditingController _climaController;
   TextEditingController _localizacionController;
+  final _formKey = new GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -42,10 +43,9 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
         new TextEditingController(text: widget.municipio.superficie);
     _altitudController =
         new TextEditingController(text: widget.municipio.altitud);
-    _climaController =
-    new TextEditingController(text: widget.municipio.clima);
+    _climaController = new TextEditingController(text: widget.municipio.clima);
     _localizacionController =
-    new TextEditingController(text: widget.municipio.localizacion);
+        new TextEditingController(text: widget.municipio.localizacion);
   }
 
   @override
@@ -60,120 +60,148 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
       body: Container(
         //height: 570.0,
         padding: const EdgeInsets.all(20.0),
-        child: ListView(
-          children: <Widget>[
-            TextField(
-              controller: _id_igecemController,
-              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-              decoration:
-                  InputDecoration(icon: Icon(Icons.format_list_numbered), labelText: 'IGECEM'),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0),
-            ),
-            Divider(),
-            TextField(
-              controller: _nombreController,
-              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-              decoration:
-              InputDecoration(icon: Icon(Icons.map), labelText: 'Nombre'),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0),
-            ),
-            Divider(),
-            TextField(
-              controller: _significadoController,
-              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-              decoration: InputDecoration(
-                  icon: Icon(Icons.question_answer), labelText: 'Significado'),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0),
-            ),
-            Divider(),
-            TextField(
-              controller: _cabeceramunController,
-              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-              decoration: InputDecoration(
-                  icon: Icon(Icons.text_format), labelText: 'Cabecera Municipal'),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0),
-            ),
-            Divider(),
-            TextField(
-              controller: _superficieController,
-              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-              decoration: InputDecoration(
-                  icon: Icon(Icons.exposure), labelText: 'Superficie'),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0),
-            ),
-            Divider(),
-            TextField(
-              controller: _altitudController,
-              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-              decoration: InputDecoration(
-                  icon: Icon(Icons.format_size), labelText: 'Altitud'),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0),
-            ),
-            Divider(),
-            TextField(
-              controller: _climaController,
-              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-              decoration: InputDecoration(
-                  icon: Icon(Icons.cloud_circle), labelText: 'Clima'),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0),
-            ),
-            Divider(),
-            CheckboxListTile(title: Text("Selecciona el clima")),
+        child: Form(
+          key: _formKey,
+          child: Container(
+            alignment: Alignment.center,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  TextField(
+                    controller: _id_igecemController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.format_list_numbered),
+                        labelText: 'IGECEM'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _nombreController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.map), labelText: 'Nombre'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _significadoController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.question_answer),
+                        labelText: 'Significado'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _cabeceramunController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.text_format),
+                        labelText: 'Cabecera Municipal'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _superficieController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.exposure), labelText: 'Superficie'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _altitudController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.format_size), labelText: 'Altitud'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _climaController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.cloud_circle), labelText: 'Clima'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
 
-            TextField(
-              controller: _localizacionController,
-              style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-              decoration: InputDecoration(
-                  icon: Icon(Icons.local_activity), labelText: 'Localización'),
+                  //CheckboxListTile(title: Text("Selecciona el clima"),
+                  //secondary: Icon(Icons.cloud),
+                  //),
+
+                  TextField(
+                    controller: _localizacionController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.local_activity),
+                        labelText: 'Localización'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  FlatButton(
+                      onPressed: () {
+                        if (widget.municipio.id_igecem != null) {
+                          municipioReference
+                              .child(_id_igecemController.text)
+                              .set({
+                            'nombre': _nombreController.text,
+                            'significado': _significadoController.text,
+                            'cabeceramun': _cabeceramunController.text,
+                            'superficie': _superficieController.text,
+                            'altitud': _altitudController.text,
+                            'clima': _climaController.text,
+                            'localizacion': _localizacionController.text,
+                          }).then((_) {
+                            Navigator.pop(context);
+                          });
+                        } else {
+                          municipioReference.push().set({
+                            'nombre': _nombreController.text,
+                            'significado': _significadoController.text,
+                            'cabeceramun': _cabeceramunController.text,
+                            'superficie': _superficieController.text,
+                            'altitud': _altitudController.text,
+                            'clima': _climaController.text,
+                            'localizacion': _localizacionController.text,
+                          }).then((_) {
+                            Navigator.pop(context);
+                          });
+                        }
+                      },
+                      child: (widget.municipio.id_igecem != null)
+                          ? Text('Guardar')
+                          : Text('Guardar')),
+                ],
+              ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0),
-            ),
-            Divider(),
-            FlatButton(
-                onPressed: () {
-                  if (widget.municipio.id_igecem != null) {
-                    municipioReference.child(_id_igecemController.text).set({
-                      'nombre': _nombreController.text,
-                      'significado': _significadoController.text,
-                      'cabeceramun': _cabeceramunController.text,
-                      'superficie': _superficieController.text,
-                      'altitud': _altitudController.text,
-                      'clima': _climaController.text,
-                      'localizacion': _localizacionController.text,
-                    }).then((_) {
-                      Navigator.pop(context);
-                    });
-                  } else {
-                    municipioReference.push().set({
-                      'nombre': _nombreController.text,
-                      'significado': _significadoController.text,
-                      'cabeceramun': _cabeceramunController.text,
-                      'superficie': _superficieController.text,
-                      'altitud': _altitudController.text,
-                      'clima': _climaController.text,
-                      'localizacion': _localizacionController.text,
-                    }).then((_) {
-                      Navigator.pop(context);
-                    });
-                  }
-                },
-                child: (widget.municipio.id_igecem != null)? Text('Guardar') : Text('Guardar')),
-          ],
+          ),
         ),
       ),
     );
