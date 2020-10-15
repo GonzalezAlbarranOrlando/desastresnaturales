@@ -43,7 +43,7 @@ class _Map_pageState extends State<Map_page> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Google Office Locations'),
+          title: const Text('Municipio'),
           backgroundColor: Colors.green[700],
         ),
         body: GoogleMap(
