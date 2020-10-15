@@ -16,7 +16,7 @@ class PrincipalesAspectos extends StatefulWidget {
   _PrincipalesAspectosState createState() => _PrincipalesAspectosState();
 }
 
-final municipioReference = FirebaseDatabase.instance.reference().child('municipio');
+final municipioReference = FirebaseDatabase.instance.reference().child('principalesaspectos');
 
 class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
   List<Municipio> items;
