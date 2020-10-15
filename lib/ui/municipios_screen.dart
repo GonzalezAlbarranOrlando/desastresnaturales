@@ -8,7 +8,7 @@ import 'package:desastresnaturales/model/municipio.dart';
 import 'package:flutter/services.dart';
 
 class MunicipioScreen extends StatefulWidget {
-  final Principal_aspecto municipio;
+  final Municipio municipio;
 
   MunicipioScreen(this.municipio);
 
@@ -19,7 +19,7 @@ class MunicipioScreen extends StatefulWidget {
 final municipioReference = FirebaseDatabase.instance.reference().child('municipio');
 
 class _MunicipioScreenState extends State<MunicipioScreen> {
-  List<Principal_aspecto> items;
+  List<Municipio> items;
   TextEditingController _id_igecemController;
   TextEditingController _nombreController;
   TextEditingController _significadoController;

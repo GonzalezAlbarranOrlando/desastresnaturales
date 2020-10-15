@@ -9,7 +9,7 @@ import 'package:desastresnaturales/model/principalesaspectos.dart';
 import 'package:flutter/services.dart';
 
 class PrincipalesAspectos extends StatefulWidget {
-  final Principal_aspecto principal_asp;
+  final Municipio principal_asp;
 
   PrincipalesAspectos(this.principal_asp);
 
@@ -20,7 +20,7 @@ class PrincipalesAspectos extends StatefulWidget {
 final municipioReference = FirebaseDatabase.instance.reference().child('principalesaspectos');
 
 class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
-  List<Principal_aspecto> items;
+  List<Municipio> items;
   TextEditingController _id_igecemController;
   TextEditingController _elevacionController;
   TextEditingController _canal_rioController;

@@ -17,7 +17,7 @@ class ListViewMunicipio extends StatefulWidget {
 final municipioReference = FirebaseDatabase.instance.reference().child('municipio');
 
 class _ListViewMunicipioState extends State<ListViewMunicipio> {
-  List<Principal_aspecto> items;
+  List<Municipio> items;
   StreamSubscription<Event> _onMunicipioAddedSubscription;
   StreamSubscription<Event> _onMunicipioChangedSubscription;
 
@@ -141,7 +141,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
 
   void _onMunicipioAdded(Event event) {
     setState(() {
-      items.add(new Principal_aspecto.fromSnapShop(event.snapshot));
+      items.add(new Municipio.fromSnapShop(event.snapshot));
     });
   }
 
@@ -150,12 +150,12 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
         items.singleWhere((municipio) => municipio.id_igecem == event.snapshot.key);
     setState(() {
       items[items.indexOf(oldMunicipioValue)] =
-          new Principal_aspecto.fromSnapShop(event.snapshot);
+          new Municipio.fromSnapShop(event.snapshot);
     });
   }
 
   void _deleteMunicipio(
-      BuildContext context, Principal_aspecto municipio, int position) async {
+      BuildContext context, Municipio municipio, int position) async {
     await municipioReference.child(municipio.id_igecem).remove().then((_) {
       setState(() {
         items.removeAt(position);
@@ -164,7 +164,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
   }
 
   void _navigateToMunicipioInformation(
-      BuildContext context, Principal_aspecto municipio) async {
+      BuildContext context, Municipio municipio) async {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => MunicipioScreen(municipio)),
@@ -172,14 +172,14 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
   }
 
   void _principalesaspectos(
-      BuildContext context, Principal_aspecto municipio) async {
+      BuildContext context, Municipio municipio) async {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => PrincipalesAspectos(municipio)),
     );
   }
 
-  void _navigateToMunicipio(BuildContext context, Principal_aspecto municipio) async {
+  void _navigateToMunicipio(BuildContext context, Municipio municipio) async {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => MunicipioInformation(municipio)),
@@ -190,7 +190,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
     await Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => MunicipioScreen(Principal_aspecto('', '', '', '', '','','','',''))),
+          builder: (context) => MunicipioScreen(Municipio('', '', '', '', '','','','',''))),
     );
   }
 }

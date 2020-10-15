@@ -19,7 +19,7 @@ final municipioReference =
 
 class _ListViewMunicipioConsultorState
     extends State<ListViewMunicipioConsultor> {
-  List<Principal_aspecto> items;
+  List<Municipio> items;
   StreamSubscription<Event> _onMunicipioAddedSubscription;
   StreamSubscription<Event> _onMunicipioChangedSubscription;
 
@@ -114,7 +114,7 @@ class _ListViewMunicipioConsultorState
 
   void _onMunicipioAdded(Event event) {
     setState(() {
-      items.add(new Principal_aspecto.fromSnapShop(event.snapshot));
+      items.add(new Municipio.fromSnapShop(event.snapshot));
     });
   }
 
@@ -123,11 +123,11 @@ class _ListViewMunicipioConsultorState
         .singleWhere((municipio) => municipio.id_igecem == event.snapshot.key);
     setState(() {
       items[items.indexOf(oldMunicipioValue)] =
-          new Principal_aspecto.fromSnapShop(event.snapshot);
+          new Municipio.fromSnapShop(event.snapshot);
     });
   }
 
-  void _navigateToMunicipio(BuildContext context, Principal_aspecto municipio) async {
+  void _navigateToMunicipio(BuildContext context, Municipio municipio) async {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => MunicipioInformation(municipio)),
