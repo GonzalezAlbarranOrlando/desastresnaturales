@@ -28,18 +28,18 @@ class Principales_aspectos{
   String get rio_canal => _rio_canal;
   String get cuerpo => _cuerpo;
   String get mas_poblado => _mas_poblados;
-  String get altitud => _mas_extenso;
-  String get clima => _menos_poblado;
-  String get localizacion => _industrializados;
+  String get mas_extenso => _mas_extenso;
+  String get menos_poblado => _menos_poblado;
+  String get industrializados => _industrializados;
 
   Principales_aspectos.fromSnapShop(DataSnapshot snapshot){
     _id_igecem = snapshot.key;
-    _elevacion = snapshot.value['nombre'];
-    _rio_canal = snapshot.value['significado'];
-    _cuerpo = snapshot.value['cabeceramun'];
-    _mas_poblados = snapshot.value['superficie'];
-    _mas_extenso = snapshot.value['altitud'];
-    _menos_poblado = snapshot.value['clima'];
-    _industrializados = snapshot.value['localizacion'];
+    _elevacion = snapshot.value['elevacion'];
+    _rio_canal = snapshot.value['riocanal'];
+    _cuerpo = snapshot.value['cuerpo'];
+    _mas_poblados = snapshot.value['maspoblados'];
+    _mas_extenso = snapshot.value['masextenso'];
+    _menos_poblado = snapshot.value['menospoblado'];
+    _industrializados = snapshot.value['industrializado'];
   }
 }
