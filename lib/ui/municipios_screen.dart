@@ -29,29 +29,35 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
   TextEditingController _climaController;
   TextEditingController _latController;
   TextEditingController _lonController;
+  TextEditingController _elevacionController;
+  TextEditingController _canal_rioController;
+  TextEditingController _cuerpoController;
+  TextEditingController _maspobladoController;
+  TextEditingController _masextensoController;
+  TextEditingController _menospobladoController;
+  TextEditingController _industrializadoController;
   final _formKey = new GlobalKey<FormState>();
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _id_igecemController =
-        new TextEditingController(text: widget.municipio.id_igecem);
-    _nombreController =
-        new TextEditingController(text: widget.municipio.nombre);
-    _significadoController =
-        new TextEditingController(text: widget.municipio.significado);
-    _cabeceramunController =
-        new TextEditingController(text: widget.municipio.cabeceramun);
-    _superficieController =
-        new TextEditingController(text: widget.municipio.superficie);
-    _altitudController =
-        new TextEditingController(text: widget.municipio.altitud);
+    _id_igecemController = new TextEditingController(text: widget.municipio.id_igecem);
+    _nombreController =        new TextEditingController(text: widget.municipio.nombre);
+    _significadoController =        new TextEditingController(text: widget.municipio.significado);
+    _cabeceramunController =        new TextEditingController(text: widget.municipio.cabeceramun);
+    _superficieController =        new TextEditingController(text: widget.municipio.superficie);
+    _altitudController =        new TextEditingController(text: widget.municipio.altitud);
     _climaController = new TextEditingController(text: widget.municipio.clima);
-    _latController =
-        new TextEditingController(text: widget.municipio.lat);
-    _lonController =
-    new TextEditingController(text: widget.municipio.lon);
+    _latController =        new TextEditingController(text: widget.municipio.lat);
+    _lonController =    new TextEditingController(text: widget.municipio.lon);
+    _elevacionController = new TextEditingController(text: widget.municipio.elevacion);
+    _canal_rioController = new TextEditingController(text: widget.municipio.rio_canal);
+    _cuerpoController = new TextEditingController(text: widget.municipio.cuerpo);
+    _maspobladoController = new TextEditingController(text: widget.municipio.mas_poblado);
+    _masextensoController = new TextEditingController(text: widget.municipio.mas_extenso);
+    _menospobladoController = new TextEditingController(text: widget.municipio.menos_poblado);
+    _industrializadoController = new TextEditingController(text: widget.municipio.industrializados);
   }
 
   @override
@@ -157,11 +163,6 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                     padding: EdgeInsets.only(top: 8.0),
                   ),
                   Divider(),
-
-                  //CheckboxListTile(title: Text("Selecciona el clima"),
-                  //secondary: Icon(Icons.cloud),
-                  //),
-
                   TextField(
                     controller: _latController,
                     keyboardType: TextInputType.number,
@@ -188,6 +189,88 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                     padding: EdgeInsets.only(top: 8.0),
                   ),
                   Divider(),
+                  TextField(
+                    controller: _elevacionController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.map), labelText: 'Elevación'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _canal_rioController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.question_answer),
+                        labelText: 'Canal o Río'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _cuerpoController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.text_format),
+                        labelText: 'Cuerpo de agua'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _maspobladoController,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.exposure), labelText: 'Muy Poblado'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _masextensoController,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.exposure), labelText: 'Más extenso'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _menospobladoController,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.format_size), labelText: 'Menos poblado'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _industrializadoController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.cloud_circle), labelText: 'Industrializado'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
                   FlatButton(
                       onPressed: () {
                         if (widget.municipio.id_igecem != null) {
@@ -202,6 +285,13 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                             'clima': _climaController.text,
                             'lat': _latController.text,
                             'lon': _lonController.text,
+                            'elevacion': _elevacionController.text,
+                            'riocanal': _canal_rioController.text,
+                            'cuerpo': _cuerpoController.text,
+                            'maspoblados': _maspobladoController.text,
+                            'masextenso': _menospobladoController.text,
+                            'menospoblado': _industrializadoController.text,
+                            'industrializado': _industrializadoController.text,
                           }).then((_) {
                             Navigator.pop(context);
                           });
@@ -215,6 +305,13 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                             'clima': _climaController.text,
                             'lat': _latController.text,
                             'lon': _lonController.text,
+                            'elevacion': _elevacionController.text,
+                            'riocanal': _canal_rioController.text,
+                            'cuerpo': _cuerpoController.text,
+                            'maspoblados': _maspobladoController.text,
+                            'masextenso': _menospobladoController.text,
+                            'menospoblado': _industrializadoController.text,
+                            'industrializado': _industrializadoController.text,
                           }).then((_) {
                             Navigator.pop(context);
                           });

@@ -1,5 +1,4 @@
 import 'package:desastresnaturales/model/zonariesgo.dart';
-import 'package:desastresnaturales/ui/principales_aspectos.dart';
 import 'package:desastresnaturales/ui/zonariesgo_information.dart';
 import 'package:desastresnaturales/ui/zonariesgo_screen.dart';
 import 'package:flutter/material.dart';

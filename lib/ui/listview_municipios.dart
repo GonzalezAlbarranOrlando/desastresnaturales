@@ -1,5 +1,4 @@
 import 'package:desastresnaturales/ui/menu_page.dart';
-import 'package:desastresnaturales/ui/principales_aspectos.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'dart:async';
@@ -105,17 +104,10 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                         ),
                         IconButton(
                             icon: Icon(
-                              Icons.folder_open,
-                              color: Colors.deepPurpleAccent,
-                            ),
-                            onPressed: () => _principalesaspectos(context, items[position])),
-                        IconButton(
-                            icon: Icon(
                               Icons.delete,
                               color: Colors.red,
                             ),
-                            onPressed: () => _deleteMunicipio(
-                                context, items[position], position)),
+                            onPressed: () => _deleteMunicipio(context, items[position], position)),
                         IconButton(
                             icon: Icon(
                               Icons.edit,
@@ -156,8 +148,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
     });
   }
 
-  void _deleteMunicipio(
-      BuildContext context, Municipio municipio, int position) async {
+  void _deleteMunicipio(BuildContext context, Municipio municipio, int position) async {
     await municipioReference.child(municipio.id_igecem).remove().then((_) {
       setState(() {
         items.removeAt(position);
@@ -173,12 +164,6 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
     );
   }
 
-  void _principalesaspectos(BuildContext context, Municipio municipio) async {
-    await Navigator.push(
-      context, MaterialPageRoute(builder: (context) => PrincipalesAspectos(municipio)),
-    );
-  }
-
   void _navigateToMunicipio(BuildContext context, Municipio municipio) async {
     await Navigator.push(
       context,
@@ -191,7 +176,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
       context,
       MaterialPageRoute(
           builder: (context) =>
-              MunicipioScreen(Municipio('', '', '', '', '', '', '', '', ''))),
+              MunicipioScreen(Municipio('', '', '', '', '', '', '', '', '','','','','','','',''))),
     );
   }
 }

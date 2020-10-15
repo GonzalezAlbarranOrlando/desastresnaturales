@@ -11,8 +11,16 @@ class Municipio{
   String _clima;
   String _lat;
   String _lon;
+  String _elevacion;
+  String _rio_canal;
+  String _cuerpo;
+  String _mas_poblados;
+  String _mas_extenso;
+  String _menos_poblado;
+  String _industrializados;
 
-  Municipio(this._id_igecem, this._nombre, this._significado, this._cabeceramun, this._superficie, this._altitud, this._clima, this._lat, this._lon);
+  Municipio(this._id_igecem, this._nombre, this._significado, this._cabeceramun, this._superficie, this._altitud, this._clima, this._lat, this._lon,
+      this._elevacion, this._rio_canal, this._cuerpo, this._mas_poblados, this._mas_extenso, this._menos_poblado, this._industrializados);
 
   Municipio.map(dynamic obj){
     this._nombre = obj['nombre'];
@@ -23,6 +31,13 @@ class Municipio{
     this._clima = obj['clima'];
     this._lat = obj['lat'];
     this._lat = obj['lon'];
+    this._elevacion = obj['elevacion'];
+    this._rio_canal = obj['riocanal'];
+    this._cuerpo = obj['cuerpo'];
+    this._mas_poblados = obj['maspoblados'];
+    this._mas_extenso = obj['masextenso'];
+    this._menos_poblado = obj['menospoblado'];
+    this._industrializados = obj['industrializado'];
   }
 
   String get id_igecem => _id_igecem;
@@ -34,6 +49,13 @@ class Municipio{
   String get clima => _clima;
   String get lat => _lat;
   String get lon => _lon;
+  String get elevacion =>_elevacion;
+  String get rio_canal => _rio_canal;
+  String get cuerpo => _cuerpo;
+  String get mas_poblado => _mas_poblados;
+  String get mas_extenso => _mas_extenso;
+  String get menos_poblado => _menos_poblado;
+  String get industrializados => _industrializados;
 
   Municipio.fromSnapShop(DataSnapshot snapshot){
     _id_igecem = snapshot.key;
@@ -45,5 +67,12 @@ class Municipio{
     _clima = snapshot.value['clima'];
     _lat = snapshot.value['lat'];
     _lon = snapshot.value['lon'];
+    _elevacion = snapshot.value['elevacion'];
+    _rio_canal = snapshot.value['riocanal'];
+    _cuerpo = snapshot.value['cuerpo'];
+    _mas_poblados = snapshot.value['maspoblados'];
+    _mas_extenso = snapshot.value['masextenso'];
+    _menos_poblado = snapshot.value['menospoblado'];
+    _industrializados = snapshot.value['industrializado'];
   }
 }
