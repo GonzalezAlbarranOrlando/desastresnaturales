@@ -9,9 +9,9 @@ import 'package:desastresnaturales/model/principalesaspectos.dart';
 import 'package:flutter/services.dart';
 
 class PrincipalesAspectos extends StatefulWidget {
-  final Municipio principal_asp;
+  final Municipio municipio;
 
-  PrincipalesAspectos(this.principal_asp);
+  PrincipalesAspectos(this.municipio);
 
   @override
   _PrincipalesAspectosState createState() => _PrincipalesAspectosState();
@@ -35,13 +35,13 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _id_igecemController = new TextEditingController(text: widget.principal_asp.id_igecem);
-    _elevacionController = new TextEditingController(text: widget.principal_asp.nombre);
-    _canal_rioController = new TextEditingController(text: widget.principal_asp.significado);
-    _cuerpoController = new TextEditingController(text: widget.principal_asp.cabeceramun);
-    _maspobladoController = new TextEditingController(text: widget.principal_asp.superficie);
-    _menospobladoController = new TextEditingController(text: widget.principal_asp.altitud);
-    _industrializadoController = new TextEditingController(text: widget.principal_asp.clima);
+    _id_igecemController = new TextEditingController(text: widget.municipio.id_igecem);
+    _elevacionController = new TextEditingController(text: widget.municipio.nombre);
+    _canal_rioController = new TextEditingController(text: widget.municipio.significado);
+    _cuerpoController = new TextEditingController(text: widget.municipio.cabeceramun);
+    _maspobladoController = new TextEditingController(text: widget.municipio.superficie);
+    _menospobladoController = new TextEditingController(text: widget.municipio.altitud);
+    _industrializadoController = new TextEditingController(text: widget.municipio.clima);
   }
 
   @override
@@ -136,7 +136,7 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                   Divider(),
                   FlatButton(
                       onPressed: () {
-                        if (widget.principal_asp.id_igecem != null) {
+                        if (widget.municipio.id_igecem != null) {
                           municipioReference
                               .child(_id_igecemController.text)
                               .set({
@@ -162,7 +162,7 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                           });
                         }
                       },
-                      child: (widget.principal_asp.id_igecem != null)
+                      child: (widget.municipio.id_igecem != null)
                           ? Text('Guardar')
                           : Text('Agregar')),
                 ],
