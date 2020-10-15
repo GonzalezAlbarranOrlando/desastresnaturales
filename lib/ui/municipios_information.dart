@@ -12,6 +12,8 @@ import 'package:location_permissions/location_permissions.dart';
 import 'menu_page.dart';
 
 class MunicipioInformation extends StatefulWidget {
+  String str_lat = "19.775405";
+  String str_lon = "-99.207922";
 
   final Municipio municipio;
   MunicipioInformation(this.municipio);
@@ -111,7 +113,7 @@ class _MunicipioInformationState extends State<MunicipioInformation> {
                   RaisedButton(onPressed: () {
                     //LocationPermissions().openAppSettings().then((bool hasOpened) => debugPrint('App Settings opened: ' + hasOpened.toString()));
                     Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => Map_page()));
+                        builder: (context) => Map_page(widget.municipio.nombre,double.parse(widget.municipio.lat), double.parse(widget.municipio.lon))));
                   }, child: Text("Ubicación"),)
                 ],
               ),
