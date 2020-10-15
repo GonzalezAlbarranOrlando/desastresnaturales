@@ -1,7 +1,10 @@
+import 'package:desastresnaturales/map/map_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:desastresnaturales/model/municipio.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'menu_page.dart';
 
 class MunicipioInformation extends StatefulWidget {
 
@@ -85,7 +88,7 @@ class _MunicipioInformationState extends State<MunicipioInformation> {
                   new Text("Industrializado : ${widget.municipio.lat}", style: TextStyle(fontSize: 18.0),),
                   Padding(padding: EdgeInsets.only(top: 8.0),),
                   Divider(),
-                  RaisedButton(onPressed: () => Fluttertoast.showToast(msg: "Mapa"), child: Text("Mapa"),)
+                  RaisedButton(onPressed:  () => Navigator.push(context, MaterialPageRoute(builder: (context) => Map_page())),child: Text("Ubicación"),)
                 ],
               ),
             ),
