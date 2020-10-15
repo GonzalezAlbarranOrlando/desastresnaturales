@@ -1,3 +1,4 @@
+import 'package:desastresnaturales/ui/principales_aspectos.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'dart:async';
@@ -101,8 +102,8 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                         ),
                         IconButton(
                             icon: Icon(
-                              Icons.delete,
-                              color: Colors.yellowAccent,
+                              Icons.folder_open,
+                              color: Colors.deepPurpleAccent,
                             ),
                             onPressed: () => _principalesaspectos(
                                 context, items[position])),
@@ -174,7 +175,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
       BuildContext context, Municipio municipio) async {
     await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => MunicipioScreen(municipio)),
+      MaterialPageRoute(builder: (context) => PrincipalesAspectos(municipio)),
     );
   }
 

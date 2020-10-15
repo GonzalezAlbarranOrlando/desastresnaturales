@@ -72,19 +72,6 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   TextField(
-                    controller: _id_igecemController,
-                    keyboardType: TextInputType.number,
-                    style: TextStyle(
-                        fontSize: 17.0, color: Colors.deepOrangeAccent),
-                    decoration: InputDecoration(
-                        icon: Icon(Icons.format_list_numbered),
-                        labelText: 'IGECEM'),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 8.0),
-                  ),
-                  Divider(),
-                  TextField(
                     controller: _nombreController,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
@@ -202,7 +189,7 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                         }
                       },
                       child: (widget.municipio.id_igecem != null)
-                          ? Text('Actualizar')
+                          ? Text('Guardar')
                           : Text('Agregar')),
                 ],
               ),
