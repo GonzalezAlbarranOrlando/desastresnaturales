@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../authentication_service.dart';
 import 'listview_municipiosConsultor.dart';
+import 'listview_zonariesgo.dart';
 
 class Menu_page extends StatelessWidget {
 
@@ -51,6 +52,7 @@ class Menu_page extends StatelessWidget {
                   onPressed: () {
                     if (str_email == "administrador@gmail.com") {
                       Fluttertoast.showToast(msg: "Todos los riesgos");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo()));
                     }else{
                       Fluttertoast.showToast(msg: "Todos los riesgos");
                     }

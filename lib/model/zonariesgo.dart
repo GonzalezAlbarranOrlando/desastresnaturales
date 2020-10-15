@@ -7,7 +7,7 @@ class Zonariesgo{
   String _desastre;
   String _nombreMunicipio;
 
-  Zonariesgo(this._igecem, this._id, this._desastre, this._nombreMunicipio);
+  Zonariesgo(this._id,this._igecem, this._desastre, this._nombreMunicipio);
 
   Zonariesgo.map(dynamic obj){
     this._igecem = obj['igecem'];
