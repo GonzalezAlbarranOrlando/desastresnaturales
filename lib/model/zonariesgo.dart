@@ -3,23 +3,27 @@ import 'package:flutter/material.dart';
 
 class Zonariesgo{
   String _id;
-  String _id_igecem;
+  String _igecem;
   String _desastre;
+  String _nombreMunicipio;
 
-  Zonariesgo(this._id_igecem, this._id, this._desastre);
+  Zonariesgo(this._igecem, this._id, this._desastre, this._nombreMunicipio);
 
   Zonariesgo.map(dynamic obj){
-    this._id_igecem = obj['igecem'];
+    this._igecem = obj['igecem'];
+    this._nombreMunicipio = obj['nombre'];
     this._desastre = obj['desastre'];
   }
 
   String get id => _id;
-  String get id_igecem => _id_igecem;
+  String get igecem => _igecem;
+  String get nombreMunicipio => _nombreMunicipio;
   String get desastre =>_desastre;
 
   Zonariesgo.fromSnapShop(DataSnapshot snapshot){
     _id = snapshot.key;
-    _id_igecem = snapshot.value['igecem'];
+    _igecem = snapshot.value['igecem'];
+    _nombreMunicipio = snapshot.value['nombre'];
     _desastre = snapshot.value['desastre'];
   }
 }
