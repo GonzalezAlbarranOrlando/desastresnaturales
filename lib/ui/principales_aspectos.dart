@@ -5,12 +5,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:desastresnaturales/model/municipio.dart';
+import 'package:desastresnaturales/model/principalesaspectos.dart';
 import 'package:flutter/services.dart';
 
 class PrincipalesAspectos extends StatefulWidget {
-  final Municipio municipio;
+  final Principal_aspecto principal_asp;
 
-  PrincipalesAspectos(this.municipio);
+  PrincipalesAspectos(this.principal_asp);
 
   @override
   _PrincipalesAspectosState createState() => _PrincipalesAspectosState();
@@ -19,7 +20,7 @@ class PrincipalesAspectos extends StatefulWidget {
 final municipioReference = FirebaseDatabase.instance.reference().child('principalesaspectos');
 
 class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
-  List<Municipio> items;
+  List<Principal_aspecto> items;
   TextEditingController _id_igecemController;
   TextEditingController _elevacionController;
   TextEditingController _canal_rioController;
@@ -27,31 +28,20 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
   TextEditingController _maspobladoController;
   TextEditingController _menospobladoController;
   TextEditingController _industrializadoController;
-  TextEditingController _latController;
-  TextEditingController _lonController;
+
   final _formKey = new GlobalKey<FormState>();
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _id_igecemController =
-    new TextEditingController(text: widget.municipio.id_igecem);
-    _elevacionController =
-    new TextEditingController(text: widget.municipio.nombre);
-    _canal_rioController =
-    new TextEditingController(text: widget.municipio.significado);
-    _cuerpoController =
-    new TextEditingController(text: widget.municipio.cabeceramun);
-    _maspobladoController =
-    new TextEditingController(text: widget.municipio.superficie);
-    _menospobladoController =
-    new TextEditingController(text: widget.municipio.altitud);
-    _industrializadoController = new TextEditingController(text: widget.municipio.clima);
-    _latController =
-    new TextEditingController(text: widget.municipio.lat);
-    _lonController =
-    new TextEditingController(text: widget.municipio.lon);
+    _id_igecemController = new TextEditingController(text: widget.principal_asp.id_igecem);
+    _elevacionController = new TextEditingController(text: widget.principal_asp.nombre);
+    _canal_rioController = new TextEditingController(text: widget.principal_asp.significado);
+    _cuerpoController = new TextEditingController(text: widget.principal_asp.cabeceramun);
+    _maspobladoController = new TextEditingController(text: widget.principal_asp.superficie);
+    _menospobladoController = new TextEditingController(text: widget.principal_asp.altitud);
+    _industrializadoController = new TextEditingController(text: widget.principal_asp.clima);
   }
 
   @override
@@ -146,7 +136,7 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                   Divider(),
                   FlatButton(
                       onPressed: () {
-                        if (widget.municipio.id_igecem != null) {
+                        if (widget.principal_asp.id_igecem != null) {
                           municipioReference
                               .child(_id_igecemController.text)
                               .set({
@@ -156,8 +146,6 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                             'superficie': _maspobladoController.text,
                             'altitud': _menospobladoController.text,
                             'clima': _industrializadoController.text,
-                            'lat': _latController.text,
-                            'lon': _lonController.text,
                           }).then((_) {
                             Navigator.pop(context);
                           });
@@ -169,14 +157,12 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                             'superficie': _maspobladoController.text,
                             'altitud': _menospobladoController.text,
                             'clima': _industrializadoController.text,
-                            'lat': _latController.text,
-                            'lon': _lonController.text,
                           }).then((_) {
                             Navigator.pop(context);
                           });
                         }
                       },
-                      child: (widget.municipio.id_igecem != null)
+                      child: (widget.principal_asp.id_igecem != null)
                           ? Text('Guardar')
                           : Text('Agregar')),
                 ],

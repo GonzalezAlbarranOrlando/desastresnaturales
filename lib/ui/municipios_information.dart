@@ -5,7 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class MunicipioInformation extends StatefulWidget {
 
-  final Municipio municipio;
+  final Principal_aspecto municipio;
   MunicipioInformation(this.municipio);
 
   @override
@@ -17,7 +17,7 @@ final pri_aspectosReference = FirebaseDatabase.instance.reference().child('princ
 
 class _MunicipioInformationState extends State<MunicipioInformation> {
 
-  List<Municipio> items;
+  List<Principal_aspecto> items;
 
   @override
   void initState() {

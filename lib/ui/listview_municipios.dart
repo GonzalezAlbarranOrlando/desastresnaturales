@@ -17,7 +17,7 @@ class ListViewMunicipio extends StatefulWidget {
 final municipioReference = FirebaseDatabase.instance.reference().child('municipio');
 
 class _ListViewMunicipioState extends State<ListViewMunicipio> {
-  List<Municipio> items;
+  List<Principal_aspecto> items;
   StreamSubscription<Event> _onMunicipioAddedSubscription;
   StreamSubscription<Event> _onMunicipioChangedSubscription;
 
@@ -72,26 +72,26 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                                 '${items[position].nombre}',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 21.0,
+                                  fontSize: 17.0,
                                 ),
                               ),
                               subtitle: Text(
                                 '${items[position].cabeceramun}',
                                 style: TextStyle(
                                   color: Colors.blueGrey,
-                                  fontSize: 21.0,
+                                  fontSize: 13.0,
                                 ),
                               ),
                               leading: Column(
                                 children: <Widget>[
                                   CircleAvatar(
                                     backgroundColor: Colors.cyan,
-                                    radius: 17.0,
+                                    radius: 15.0,
                                     child: Text(
                                       '${position + 1}',
                                       style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 21.0,
+                                        fontSize: 18.0,
                                       ),
                                     ),
                                   )
@@ -132,7 +132,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
             Icons.add,
             color: Colors.white,
           ),
-          backgroundColor: Colors.deepOrangeAccent,
+          backgroundColor: Colors.amber,
           onPressed: () => _createNewMunicipio(context),
         ),
       ),
@@ -141,7 +141,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
 
   void _onMunicipioAdded(Event event) {
     setState(() {
-      items.add(new Municipio.fromSnapShop(event.snapshot));
+      items.add(new Principal_aspecto.fromSnapShop(event.snapshot));
     });
   }
 
@@ -150,12 +150,12 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
         items.singleWhere((municipio) => municipio.id_igecem == event.snapshot.key);
     setState(() {
       items[items.indexOf(oldMunicipioValue)] =
-          new Municipio.fromSnapShop(event.snapshot);
+          new Principal_aspecto.fromSnapShop(event.snapshot);
     });
   }
 
   void _deleteMunicipio(
-      BuildContext context, Municipio municipio, int position) async {
+      BuildContext context, Principal_aspecto municipio, int position) async {
     await municipioReference.child(municipio.id_igecem).remove().then((_) {
       setState(() {
         items.removeAt(position);
@@ -164,7 +164,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
   }
 
   void _navigateToMunicipioInformation(
-      BuildContext context, Municipio municipio) async {
+      BuildContext context, Principal_aspecto municipio) async {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => MunicipioScreen(municipio)),
@@ -172,14 +172,14 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
   }
 
   void _principalesaspectos(
-      BuildContext context, Municipio municipio) async {
+      BuildContext context, Principal_aspecto municipio) async {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => PrincipalesAspectos(municipio)),
     );
   }
 
-  void _navigateToMunicipio(BuildContext context, Municipio municipio) async {
+  void _navigateToMunicipio(BuildContext context, Principal_aspecto municipio) async {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => MunicipioInformation(municipio)),
@@ -190,7 +190,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
     await Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => MunicipioScreen(Municipio('', '', '', '', '','','','',''))),
+          builder: (context) => MunicipioScreen(Principal_aspecto('', '', '', '', '','','','',''))),
     );
   }
 }

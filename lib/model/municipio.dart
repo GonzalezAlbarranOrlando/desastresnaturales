@@ -1,7 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
-class Municipio{
+class Principal_aspecto{
   String _id_igecem;
   String _nombre;
   String _significado;
@@ -12,9 +12,9 @@ class Municipio{
   String _lat;
   String _lon;
 
-  Municipio(this._id_igecem, this._nombre, this._significado, this._cabeceramun, this._superficie, this._altitud, this._clima, this._lat, this._lon);
+  Principal_aspecto(this._id_igecem, this._nombre, this._significado, this._cabeceramun, this._superficie, this._altitud, this._clima, this._lat, this._lon);
 
-  Municipio.map(dynamic obj){
+  Principal_aspecto.map(dynamic obj){
     this._nombre = obj['nombre'];
     this._significado = obj['significado'];
     this._cabeceramun = obj['cabeceramun'];
@@ -35,7 +35,7 @@ class Municipio{
   String get lat => _lat;
   String get lon => _lon;
 
-  Municipio.fromSnapShop(DataSnapshot snapshot){
+  Principal_aspecto.fromSnapShop(DataSnapshot snapshot){
     _id_igecem = snapshot.key;
     _nombre = snapshot.value['nombre'];
     _significado = snapshot.value['significado'];
