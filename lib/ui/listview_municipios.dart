@@ -102,6 +102,13 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                         IconButton(
                             icon: Icon(
                               Icons.delete,
+                              color: Colors.yellowAccent,
+                            ),
+                            onPressed: () => _principalesaspectos(
+                                context, items[position])),
+                        IconButton(
+                            icon: Icon(
+                              Icons.delete,
                               color: Colors.red,
                             ),
                             onPressed: () => _deleteMunicipio(
@@ -156,6 +163,14 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
   }
 
   void _navigateToMunicipioInformation(
+      BuildContext context, Municipio municipio) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MunicipioScreen(municipio)),
+    );
+  }
+
+  void _principalesaspectos(
       BuildContext context, Municipio municipio) async {
     await Navigator.push(
       context,
