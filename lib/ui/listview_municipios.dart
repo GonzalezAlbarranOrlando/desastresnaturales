@@ -1,3 +1,4 @@
+import 'package:desastresnaturales/ui/menu_page.dart';
 import 'package:desastresnaturales/ui/principales_aspectos.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -50,8 +51,9 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
           centerTitle: true,
           backgroundColor: Colors.deepOrangeAccent,
           leading: IconButton(
-            icon: Icon(Icons.cancel),
-            onPressed: () => context.read<AuthenticationService>().signOut(),
+            icon: Icon(Icons.arrow_back),
+            //onPressed: () => context.read<AuthenticationService>().signOut(),
+            
           ),
         ),
         body: Center(
@@ -86,12 +88,12 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                                 children: <Widget>[
                                   CircleAvatar(
                                     backgroundColor: Colors.cyan,
-                                    radius: 15.0,
+                                    radius: 17.0,
                                     child: Text(
-                                      '${position + 1}',
+                                      '${items[position].id_igecem}',
                                       style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 18.0,
+                                        fontSize: 16.0,
                                       ),
                                     ),
                                   )

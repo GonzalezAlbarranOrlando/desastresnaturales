@@ -52,7 +52,7 @@ class _ListViewMunicipioConsultorState
           centerTitle: true,
           backgroundColor: Colors.deepOrangeAccent,
           leading: IconButton(
-            icon: Icon(Icons.cancel),
+            icon: Icon(Icons.arrow_back),
             onPressed: () => context.read<AuthenticationService>().signOut(),
           ),
         ),
@@ -74,14 +74,13 @@ class _ListViewMunicipioConsultorState
                                 '${items[position].nombre}',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 21.0,
+                                  fontSize: 17.0,
                                 ),
                               ),
-                              subtitle: Text(
-                                '${items[position].cabeceramun}',
+                              subtitle: Text('${items[position].cabeceramun}',
                                 style: TextStyle(
                                   color: Colors.blueGrey,
-                                  fontSize: 21.0,
+                                  fontSize: 14.0,
                                 ),
                               ),
                               leading: Column(
@@ -89,11 +88,10 @@ class _ListViewMunicipioConsultorState
                                   CircleAvatar(
                                     backgroundColor: Colors.cyan,
                                     radius: 17.0,
-                                    child: Text(
-                                      '${position + 1}',
+                                    child: Text('${items[position].id_igecem}',
                                       style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 21.0,
+                                        fontSize: 16.0,
                                       ),
                                     ),
                                   )

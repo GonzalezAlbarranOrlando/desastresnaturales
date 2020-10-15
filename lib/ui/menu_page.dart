@@ -4,21 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/provider.dart';
-
 import '../authentication_service.dart';
 import 'listview_municipiosConsultor.dart';
 import 'listview_zonariesgo.dart';
 
 class Menu_page extends StatelessWidget {
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-
       theme: ThemeData.light(),
       home: Scaffold(
         appBar: AppBar(
