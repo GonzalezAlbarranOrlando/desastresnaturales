@@ -82,9 +82,6 @@ class Menu_page extends StatelessWidget {
               ],
             )),
       ),
-
-
-
     );
   }
 }

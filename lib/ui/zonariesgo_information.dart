@@ -52,7 +52,6 @@ class _ZonariesgoInformationState extends State<ZonariesgoInformation> {
                   new Text("Desastre : ${widget.zonariesgo.desastre}", style: TextStyle(fontSize: 18.0),),
                   Padding(padding: EdgeInsets.only(top: 8.0),),
                   Divider(),
-
                 ],
               ),
             ),

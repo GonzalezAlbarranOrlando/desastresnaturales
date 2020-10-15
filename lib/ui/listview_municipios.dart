@@ -15,7 +15,8 @@ class ListViewMunicipio extends StatefulWidget {
   _ListViewMunicipioState createState() => _ListViewMunicipioState();
 }
 
-final municipioReference = FirebaseDatabase.instance.reference().child('municipio');
+final municipioReference =
+    FirebaseDatabase.instance.reference().child('municipio');
 
 class _ListViewMunicipioState extends State<ListViewMunicipio> {
   List<Municipio> items;
@@ -107,8 +108,7 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                               Icons.folder_open,
                               color: Colors.deepPurpleAccent,
                             ),
-                            onPressed: () => _principalesaspectos(
-                                context, items[position])),
+                            onPressed: () => _principalesaspectos(context, items[position])),
                         IconButton(
                             icon: Icon(
                               Icons.delete,
@@ -148,8 +148,8 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
   }
 
   void _onMunicipioUpdate(Event event) {
-    var oldMunicipioValue =
-        items.singleWhere((municipio) => municipio.id_igecem == event.snapshot.key);
+    var oldMunicipioValue = items
+        .singleWhere((municipio) => municipio.id_igecem == event.snapshot.key);
     setState(() {
       items[items.indexOf(oldMunicipioValue)] =
           new Municipio.fromSnapShop(event.snapshot);
@@ -173,11 +173,9 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
     );
   }
 
-  void _principalesaspectos(
-      BuildContext context, Municipio municipio) async {
+  void _principalesaspectos(BuildContext context, Municipio municipio) async {
     await Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => PrincipalesAspectos(municipio)),
+      context, MaterialPageRoute(builder: (context) => PrincipalesAspectos(municipio)),
     );
   }
 
@@ -192,7 +190,8 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
     await Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => MunicipioScreen(Municipio('', '', '', '', '','','','',''))),
+          builder: (context) =>
+              MunicipioScreen(Municipio('', '', '', '', '', '', '', '', ''))),
     );
   }
 }

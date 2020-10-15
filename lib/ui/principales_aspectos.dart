@@ -9,6 +9,7 @@ import 'package:desastresnaturales/model/principalesaspectos.dart';
 import 'package:flutter/services.dart';
 
 class PrincipalesAspectos extends StatefulWidget {
+
   final Municipio municipio;
 
   PrincipalesAspectos(this.municipio);

@@ -82,7 +82,7 @@ class _MunicipioInformationState extends State<MunicipioInformation> {
                     style: TextStyle(fontSize: 18.0),),
                   Padding(padding: EdgeInsets.only(top: 8.0),),
                   Divider(),
-                  new Text("Lomgitud : ${widget.municipio.lon}",
+                  new Text("Longitud : ${widget.municipio.lon}",
                     style: TextStyle(fontSize: 18.0),),
                   Padding(padding: EdgeInsets.only(top: 8.0),),
                   Divider(),
