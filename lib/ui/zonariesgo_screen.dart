@@ -101,9 +101,6 @@ class _ZonariesgoScreenState extends State<ZonariesgoScreen> {
                     padding: EdgeInsets.only(top: 8.0),
                   ),
                   Divider(),
-
-
-
                   Padding(
                     padding: EdgeInsets.only(top: 8.0),
                   ),

@@ -52,8 +52,8 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
           backgroundColor: Colors.deepOrangeAccent,
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
-            //onPressed: () => context.read<AuthenticationService>().signOut(),
-            
+            onPressed: () => context.read<AuthenticationService>().signOut(),
+            //onPressed: () => _createNewMunicipio(context),
           ),
         ),
         body: Center(
