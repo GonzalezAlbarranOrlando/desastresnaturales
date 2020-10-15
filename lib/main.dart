@@ -1,6 +1,7 @@
 import 'package:desastresnaturales/ui/listview_municipiosConsultor.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:desastresnaturales/ui/listview_municipios.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -52,8 +53,7 @@ class AuthenticationWrapper extends StatelessWidget {
         Fluttertoast.showToast(msg: "Bienvenido Consultor");
         return ListViewMunicipioConsultor();
       }else{
-        Fluttertoast.showToast(msg: "Ingresar datos correctos");
-        return Login_page();
+        Fluttertoast.showToast(msg: "Ingresa datos correctos");
       }
     }
     return Login_page();
@@ -81,10 +81,12 @@ class Login_page extends StatelessWidget {
               children: <Widget>[
                 TextFormField(
                   controller: emailController,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(labelText: "Ingresa el correo electrónico"),
                 ),
                 TextFormField(
                   controller: passwordController,
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(labelText: "Ingresa la contraseña"),
                   obscureText: true,
                 ),

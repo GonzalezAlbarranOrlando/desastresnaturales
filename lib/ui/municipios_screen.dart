@@ -1,7 +1,11 @@
+import 'package:desastresnaturales/main.dart';
+import 'package:desastresnaturales/ui/listview_municipios.dart';
+import 'package:desastresnaturales/ui/municipios_information.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:desastresnaturales/model/municipio.dart';
+import 'package:flutter/services.dart';
 
 class MunicipioScreen extends StatefulWidget {
   final Municipio municipio;
@@ -12,8 +16,7 @@ class MunicipioScreen extends StatefulWidget {
   _MunicipioScreenState createState() => _MunicipioScreenState();
 }
 
-final municipioReference =
-    FirebaseDatabase.instance.reference().child('municipio');
+final municipioReference = FirebaseDatabase.instance.reference().child('municipio');
 
 class _MunicipioScreenState extends State<MunicipioScreen> {
   List<Municipio> items;
@@ -51,7 +54,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      //resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text('Información del Municipio'),
         centerTitle: true,
@@ -70,6 +73,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                 children: <Widget>[
                   TextField(
                     controller: _id_igecemController,
+                    keyboardType: TextInputType.number,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(
@@ -117,6 +121,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                   Divider(),
                   TextField(
                     controller: _superficieController,
+                    keyboardType: TextInputType.number,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(
@@ -128,6 +133,7 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                   Divider(),
                   TextField(
                     controller: _altitudController,
+                    keyboardType: TextInputType.number,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(

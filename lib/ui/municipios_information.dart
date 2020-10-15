@@ -39,7 +39,7 @@ class _MunicipioInformationState extends State<MunicipioInformation> {
             Center(
               child: Column(
                 children: <Widget>[
-                  new Text("Id : ${widget.municipio.id_igecem}", style: TextStyle(fontSize: 18.0),),
+                  new Text("Id IGECEM : ${widget.municipio.id_igecem}", style: TextStyle(fontSize: 18.0),),
                   Padding(padding: EdgeInsets.only(top: 8.0),),
                   Divider(),
                   new Text("Nombre : ${widget.municipio.nombre}", style: TextStyle(fontSize: 18.0),),
