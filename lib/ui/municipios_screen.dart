@@ -27,7 +27,8 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
   TextEditingController _superficieController;
   TextEditingController _altitudController;
   TextEditingController _climaController;
-  TextEditingController _localizacionController;
+  TextEditingController _latController;
+  TextEditingController _lonController;
   final _formKey = new GlobalKey<FormState>();
 
   @override
@@ -47,8 +48,10 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
     _altitudController =
         new TextEditingController(text: widget.municipio.altitud);
     _climaController = new TextEditingController(text: widget.municipio.clima);
-    _localizacionController =
-        new TextEditingController(text: widget.municipio.localizacion);
+    _latController =
+        new TextEditingController(text: widget.municipio.lat);
+    _lonController =
+    new TextEditingController(text: widget.municipio.lon);
   }
 
   @override
@@ -160,12 +163,26 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                   //),
 
                   TextField(
-                    controller: _localizacionController,
+                    controller: _latController,
+                    keyboardType: TextInputType.number,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(
                         icon: Icon(Icons.local_activity),
-                        labelText: 'Localización'),
+                        labelText: 'Latitud'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _lonController,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.format_list_numbered),
+                        labelText: 'Longitud'),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 8.0),
@@ -183,7 +200,8 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                             'superficie': _superficieController.text,
                             'altitud': _altitudController.text,
                             'clima': _climaController.text,
-                            'localizacion': _localizacionController.text,
+                            'lat': _latController.text,
+                            'lon': _lonController.text,
                           }).then((_) {
                             Navigator.pop(context);
                           });
@@ -195,7 +213,8 @@ class _MunicipioScreenState extends State<MunicipioScreen> {
                             'superficie': _superficieController.text,
                             'altitud': _altitudController.text,
                             'clima': _climaController.text,
-                            'localizacion': _localizacionController.text,
+                            'lat': _latController.text,
+                            'lon': _lonController.text,
                           }).then((_) {
                             Navigator.pop(context);
                           });

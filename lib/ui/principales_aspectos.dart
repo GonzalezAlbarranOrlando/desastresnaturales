@@ -27,7 +27,8 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
   TextEditingController _superficieController;
   TextEditingController _altitudController;
   TextEditingController _climaController;
-  TextEditingController _localizacionController;
+  TextEditingController _latController;
+  TextEditingController _lonController;
   final _formKey = new GlobalKey<FormState>();
 
   @override
@@ -47,8 +48,10 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
     _altitudController =
     new TextEditingController(text: widget.municipio.altitud);
     _climaController = new TextEditingController(text: widget.municipio.clima);
-    _localizacionController =
-    new TextEditingController(text: widget.municipio.localizacion);
+    _latController =
+    new TextEditingController(text: widget.municipio.lat);
+    _lonController =
+    new TextEditingController(text: widget.municipio.lon);
   }
 
   @override
@@ -147,12 +150,24 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                   //),
 
                   TextField(
-                    controller: _localizacionController,
+                    controller: _latController,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(
                         icon: Icon(Icons.local_activity),
-                        labelText: 'Localización'),
+                        labelText: 'Latitud'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Divider(),
+                  TextField(
+                    controller: _lonController,
+                    style: TextStyle(
+                        fontSize: 17.0, color: Colors.deepOrangeAccent),
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.local_activity),
+                        labelText: 'Longitud'),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 8.0),
@@ -170,7 +185,8 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                             'superficie': _superficieController.text,
                             'altitud': _altitudController.text,
                             'clima': _climaController.text,
-                            'localizacion': _localizacionController.text,
+                            'lat': _latController.text,
+                            'lon': _lonController.text,
                           }).then((_) {
                             Navigator.pop(context);
                           });
@@ -182,7 +198,8 @@ class _PrincipalesAspectosState extends State<PrincipalesAspectos> {
                             'superficie': _superficieController.text,
                             'altitud': _altitudController.text,
                             'clima': _climaController.text,
-                            'localizacion': _localizacionController.text,
+                            'lat': _latController.text,
+                            'lon': _lonController.text,
                           }).then((_) {
                             Navigator.pop(context);
                           });
