@@ -44,7 +44,7 @@ class _Map_pageState extends State<Map_page> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Municipio'),
-          backgroundColor: Colors.deepOrangeAccent[700],
+          backgroundColor: Colors.deepPurpleAccent[700],
         ),
         body: GoogleMap(
           onMapCreated: _onMapCreated,
