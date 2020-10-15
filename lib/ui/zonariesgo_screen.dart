@@ -67,6 +67,7 @@ class _ZonariesgoScreenState extends State<ZonariesgoScreen> {
 
                   TextField(
                     controller: _igecemController,
+                    keyboardType: TextInputType.number,
                     style: TextStyle(
                         fontSize: 17.0, color: Colors.deepOrangeAccent),
                     decoration: InputDecoration(
@@ -109,8 +110,7 @@ class _ZonariesgoScreenState extends State<ZonariesgoScreen> {
                   Divider(),
                   FlatButton(
                       onPressed: () {
-                        if (widget.zonariesgo.id != null || _idController.text.isNotEmpty || _idController.text != "") {
-                          Fluttertoast.showToast(msg: "if-"+_idController.text + "-");
+                        if (widget.zonariesgo.id != null) {
                           zonariesgoReference
                               .child(_idController.text)
                               .set({
@@ -121,7 +121,6 @@ class _ZonariesgoScreenState extends State<ZonariesgoScreen> {
                             Navigator.pop(context);
                           });
                         } else {
-                          Fluttertoast.showToast(msg: "else");
                           zonariesgoReference
                               .push().set({
                             'igecem': _igecemController.text,
