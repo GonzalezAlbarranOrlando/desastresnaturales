@@ -8,6 +8,8 @@ import '../authentication_service.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 
+import 'municipioZR_information.dart';
+
 class ListViewMunicipioConsultor extends StatefulWidget {
   @override
   _ListViewMunicipioConsultorState createState() =>
@@ -100,6 +102,15 @@ class _ListViewMunicipioConsultorState
                               onTap: () => _navigateToMunicipio(
                                   context, items[position])),
                         ),
+
+                        IconButton(
+                            icon: Icon(
+                              Icons.input,
+                              color: Colors.blue,
+                            ),
+                            onPressed: () => _navigateToMunicipioZonaR(
+                                context, items[position])),
+
                       ],
                     ),
                   ],
@@ -131,4 +142,11 @@ class _ListViewMunicipioConsultorState
       MaterialPageRoute(builder: (context) => MunicipioInformation(municipio)),
     );
   }
+  void _navigateToMunicipioZonaR(BuildContext context, Municipio municipio) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MunicipioZR_information(municipio)),
+    );
+  }
+
 }

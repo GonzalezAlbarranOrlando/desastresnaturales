@@ -9,6 +9,8 @@ import '../authentication_service.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 
+import 'municipioZR_information.dart';
+
 class ListViewMunicipio extends StatefulWidget {
   @override
   _ListViewMunicipioState createState() => _ListViewMunicipioState();
@@ -104,6 +106,13 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
                         ),
                         IconButton(
                             icon: Icon(
+                              Icons.input,
+                              color: Colors.blue,
+                            ),
+                            onPressed: () => _navigateToMunicipioZonaR(
+                                context, items[position])),
+                        IconButton(
+                            icon: Icon(
                               Icons.delete,
                               color: Colors.red,
                             ),
@@ -168,6 +177,13 @@ class _ListViewMunicipioState extends State<ListViewMunicipio> {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => MunicipioInformation(municipio)),
+    );
+  }
+
+  void _navigateToMunicipioZonaR(BuildContext context, Municipio municipio) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MunicipioZR_information(municipio)),
     );
   }
 
