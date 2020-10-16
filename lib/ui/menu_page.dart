@@ -46,7 +46,7 @@ class Menu_page extends StatelessWidget {
                   onPressed: () {
                     if (str_email == "administrador@gmail.com") {
                       Fluttertoast.showToast(msg: "Todos los riesgos");
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("todo")));
                     }else{
                       Fluttertoast.showToast(msg: "Todos los riesgos");
                     }
@@ -59,6 +59,8 @@ class Menu_page extends StatelessWidget {
                   onPressed: () {
                     if (str_email == "administrador@gmail.com") {
                       Fluttertoast.showToast(msg: "Zona sísmica");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Zona sísmica")));
+
                     }else{
                       Fluttertoast.showToast(msg: "Zona sísmica");
                     }
@@ -71,6 +73,7 @@ class Menu_page extends StatelessWidget {
                   onPressed: () {
                     if (str_email == "administrador@gmail.com") {
                       Fluttertoast.showToast(msg: "Inundaciones");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Inundaciones")));
                     }else{
                       Fluttertoast.showToast(msg: "Inundaciones");
                     }
