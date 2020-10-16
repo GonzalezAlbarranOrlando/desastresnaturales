@@ -67,12 +67,12 @@ class Municipio{
     _clima = snapshot.value['clima'];
     _lat = snapshot.value['lat'];
     _lon = snapshot.value['lon'];
-    _elevacion = snapshot.value['elevacion'];
-    _rio_canal = snapshot.value['riocanal'];
-    _cuerpo = snapshot.value['cuerpo'];
-    _mas_poblados = snapshot.value['maspoblados'];
+    _elevacion = snapshot.value['elevaciones'];
+    _rio_canal = snapshot.value['riosycanales'];
+    _cuerpo = snapshot.value['cuerposdeagua'];
+    _mas_poblados = snapshot.value['maspoblado'];
     _mas_extenso = snapshot.value['masextenso'];
-    _menos_poblado = snapshot.value['menospoblado'];
-    _industrializados = snapshot.value['industrializado'];
+    _menos_poblado = snapshot.value['menosextenso'];
+    _industrializados = snapshot.value['masindustrializado'];
   }
 }

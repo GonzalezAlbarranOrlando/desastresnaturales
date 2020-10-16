@@ -21,7 +21,7 @@ class MunicipioInformation extends StatefulWidget {
 }
 
 final municipioReference = FirebaseDatabase.instance.reference().child('municipio');
-final pri_aspectosReference = FirebaseDatabase.instance.reference().child('principalesaspectos');
+
 
 class _MunicipioInformationState extends State<MunicipioInformation> {
 
