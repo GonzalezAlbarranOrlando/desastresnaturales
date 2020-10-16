@@ -31,13 +31,13 @@ class Municipio{
     this._clima = obj['clima'];
     this._lat = obj['lat'];
     this._lat = obj['lon'];
-    this._elevacion = obj['elevacion'];
-    this._rio_canal = obj['riocanal'];
-    this._cuerpo = obj['cuerpo'];
-    this._mas_poblados = obj['maspoblados'];
+    this._elevacion = obj['elevaciones'];
+    this._rio_canal = obj['riosycanales'];
+    this._cuerpo = obj['cuerposdeagua'];
+    this._mas_poblados = obj['maspoblado'];
     this._mas_extenso = obj['masextenso'];
-    this._menos_poblado = obj['menospoblado'];
-    this._industrializados = obj['industrializado'];
+    this._menos_poblado = obj['menosextenso'];
+    this._industrializados = obj['masindustrializado'];
   }
 
   String get id_igecem => _id_igecem;
