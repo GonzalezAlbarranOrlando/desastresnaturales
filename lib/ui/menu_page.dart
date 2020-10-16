@@ -23,8 +23,11 @@ class Menu_page extends StatelessWidget {
         body: Center(
             child: Column(
               children: <Widget>[
-                Padding(padding: EdgeInsets.only(top: 8.0),),
-                Divider(),
+                Padding(padding: EdgeInsets.only(top: 5.0),),
+
+                new Text("Municipios", style: TextStyle(fontSize: 30.0),),
+
+                Padding(padding: EdgeInsets.only(top: 5.0),),
                 RaisedButton(
                   onPressed: () {
                     //Fluttertoast.showToast(msg: "Bienvenido-" +context.read<AuthenticationService>().get_email());
@@ -35,13 +38,13 @@ class Menu_page extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewMunicipioConsultor()));
                     }
                   },
-                  child: Text('Todos los municipios'),
+                  child: Text('Lista de municipios'),
                 ),
-                Padding(padding: EdgeInsets.only(top: 8.0),),
-                Divider(),
+                Padding(padding: EdgeInsets.only(top: 5.0),),
+
                 new Text("Zonas de riesgo", style: TextStyle(fontSize: 30.0),),
-                Padding(padding: EdgeInsets.only(top: 8.0),),
-                Divider(),
+                Padding(padding: EdgeInsets.only(top: 5.0),),
+
                 RaisedButton(
                   onPressed: () {
                     if (str_email == "administrador@gmail.com") {
@@ -53,8 +56,8 @@ class Menu_page extends StatelessWidget {
                   },
                   child: Text('Todos los riesgos'),
                 ),
-                Padding(padding: EdgeInsets.only(top: 8.0),),
-                Divider(),
+                Padding(padding: EdgeInsets.only(top: 5.0),),
+
                 RaisedButton(
                   onPressed: () {
                     if (str_email == "administrador@gmail.com") {
@@ -67,8 +70,8 @@ class Menu_page extends StatelessWidget {
                   },
                   child: Text('Zona sísmica'),
                 ),
-                Padding(padding: EdgeInsets.only(top: 8.0),),
-                Divider(),
+                Padding(padding: EdgeInsets.only(top: 5.0),),
+
                 RaisedButton(
                   onPressed: () {
                     if (str_email == "administrador@gmail.com") {
@@ -80,8 +83,62 @@ class Menu_page extends StatelessWidget {
                   },
                   child: Text('Inundaciones'),
                 ),
-                Padding(padding: EdgeInsets.only(top: 8.0),),
-                Divider(),
+                Padding(padding: EdgeInsets.only(top: 5.0),),
+
+                RaisedButton(
+                  onPressed: () {
+                    if (str_email == "administrador@gmail.com") {
+                      Fluttertoast.showToast(msg: "Deslave");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Deslave")));
+                    }else{
+                      Fluttertoast.showToast(msg: "Deslave");
+                    }
+                  },
+                  child: Text('Deslave'),
+                ),
+
+                Padding(padding: EdgeInsets.only(top: 5.0),),
+
+                RaisedButton(
+                  onPressed: () {
+                    if (str_email == "administrador@gmail.com") {
+                      Fluttertoast.showToast(msg: "Incendio forestal");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Incendio forestal")));
+                    }else{
+                      Fluttertoast.showToast(msg: "Incendio forestal");
+                    }
+                  },
+                  child: Text('Incendio forestal'),
+                ),
+
+                Padding(padding: EdgeInsets.only(top: 5.0),),
+
+                RaisedButton(
+                  onPressed: () {
+                    if (str_email == "administrador@gmail.com") {
+                      Fluttertoast.showToast(msg: "Zona volcánica");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Zona volcánica")));
+                    }else{
+                      Fluttertoast.showToast(msg: "Zona volcánica");
+                    }
+                  },
+                  child: Text('Zona volcánica'),
+                ),
+
+                Padding(padding: EdgeInsets.only(top: 5.0),),
+
+                RaisedButton(
+                  onPressed: () {
+                    if (str_email == "administrador@gmail.com") {
+                      Fluttertoast.showToast(msg: "Derrumbes");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Derrumbes")));
+                    }else{
+                      Fluttertoast.showToast(msg: "Derrumbes");
+                    }
+                  },
+                  child: Text('Derrumbes'),
+                ),
+
               ],
             )),
       ),
