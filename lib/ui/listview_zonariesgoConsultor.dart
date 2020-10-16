@@ -109,7 +109,7 @@ class _ListViewZonariesgoConsultorState extends State<ListViewZonariesgoConsulto
                                         '${position + 1}',
                                         style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 18.0,
+                                          fontSize: 15.0,
                                         ),
                                       ),
                                     )
@@ -159,7 +159,7 @@ class _ListViewZonariesgoConsultorState extends State<ListViewZonariesgoConsulto
                                         '${position + 1}',
                                         style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 18.0,
+                                          fontSize: 15.0,
                                         ),
                                       ),
                                     )

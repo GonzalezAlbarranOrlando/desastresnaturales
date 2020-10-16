@@ -93,7 +93,7 @@ class _ListViewMunicipioConsultorState
                                     child: Text('${items[position].id_igecem}',
                                       style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 16.0,
+                                        fontSize: 15.0,
                                       ),
                                     ),
                                   )

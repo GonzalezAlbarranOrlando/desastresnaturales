@@ -102,7 +102,7 @@ class _MunicipioZonaRInformationState extends State<MunicipioZR_information> {
                                         '${position + 1}',
                                         style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 18.0,
+                                          fontSize: 15.0,
                                         ),
                                       ),
                                     )
