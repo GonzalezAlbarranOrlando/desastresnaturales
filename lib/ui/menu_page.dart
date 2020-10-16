@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../authentication_service.dart';
 import 'listview_municipiosConsultor.dart';
 import 'listview_zonariesgo.dart';
+import 'listview_zonariesgoConsultor.dart';
 
 class Menu_page extends StatelessWidget {
 
@@ -19,6 +20,11 @@ class Menu_page extends StatelessWidget {
           title: Text('Menú'),
           centerTitle: true,
           backgroundColor: Colors.deepOrangeAccent,
+          leading: IconButton(
+            icon: Icon(Icons.clear),
+            onPressed: () => context.read<AuthenticationService>().signOut(),
+            //onPressed: () => _createNewMunicipio(context),
+          ),
         ),
         body: Center(
             child: Column(
@@ -52,6 +58,7 @@ class Menu_page extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("todo")));
                     }else{
                       Fluttertoast.showToast(msg: "Todos los riesgos");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgoConsultor("todo")));
                     }
                   },
                   child: Text('Todos los riesgos'),
@@ -66,6 +73,7 @@ class Menu_page extends StatelessWidget {
 
                     }else{
                       Fluttertoast.showToast(msg: "Zona sísmica");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgoConsultor("Zona sísmica")));
                     }
                   },
                   child: Text('Zona sísmica'),
@@ -79,6 +87,7 @@ class Menu_page extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Inundaciones")));
                     }else{
                       Fluttertoast.showToast(msg: "Inundaciones");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgoConsultor("Inundaciones")));
                     }
                   },
                   child: Text('Inundaciones'),
@@ -92,6 +101,7 @@ class Menu_page extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Deslave")));
                     }else{
                       Fluttertoast.showToast(msg: "Deslave");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgoConsultor("Deslave")));
                     }
                   },
                   child: Text('Deslave'),
@@ -106,6 +116,7 @@ class Menu_page extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Incendio forestal")));
                     }else{
                       Fluttertoast.showToast(msg: "Incendio forestal");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgoConsultor("Incendio forestal")));
                     }
                   },
                   child: Text('Incendio forestal'),
@@ -120,6 +131,7 @@ class Menu_page extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Zona volcánica")));
                     }else{
                       Fluttertoast.showToast(msg: "Zona volcánica");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgoConsultor("Zona volcánica")));
                     }
                   },
                   child: Text('Zona volcánica'),
@@ -134,6 +146,7 @@ class Menu_page extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgo("Derrumbes")));
                     }else{
                       Fluttertoast.showToast(msg: "Derrumbes");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewZonariesgoConsultor("Derrumbes")));
                     }
                   },
                   child: Text('Derrumbes'),
